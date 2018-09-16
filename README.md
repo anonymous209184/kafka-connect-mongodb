@@ -505,10 +505,10 @@ The sink connector can also be used in a different operation mode in order to ha
 * [MongoDB](http://debezium.io/docs/connectors/mongodb/) 
 * [MySQL](http://debezium.io/docs/connectors/mysql/)
 * [PostgreSQL](http://debezium.io/docs/connectors/postgresql/)
-* **Oracle** _coming soon!_ ([early preview at Debezium Project](http://debezium.io/docs/connectors/oracle/))
-* **SQL Server** ([not yet finished at Debezium Project](http://debezium.io/docs/connectors/sqlserver/))
+* [SQL Server](http://debezium.io/docs/connectors/sqlserver/) *currently in preview / incubating state at Debezium*
+* **Oracle** _coming soon!_ (http://debezium.io/docs/connectors/oracle/)
 
-This effectively allows to replicate all state changes within the source databases into MongoDB collections. Debezium produces very similar CDC events for MySQL and PostgreSQL. The so far addressed use cases worked fine based on the same code which is why there is only one _RdbmsHandler_ implementation to support them both at the moment. Debezium Oracle CDC format will be integrated in a future release.
+This effectively allows to replicate all state changes within the source databases into MongoDB collections. Debezium produces very similar CDC events for the RDBMS systems it is capable to read from. The so far tested and addressed use cases worked fine based on the same code which is why there is only one [RdbmsHandler](https://github.com/hpgrahsl/kafka-connect-mongodb/blob/master/src/main/java/at/grahsl/kafka/connect/mongodb/cdc/debezium/rdbms/RdbmsHandler.java) implementation to support them all at the moment. Support for Debezium Oracle CDC format will be available in a future release.
  
 Also note that **both serialization formats (JSON+Schema & AVRO) can be used** depending on which configuration is a better fit for your use case.
 
