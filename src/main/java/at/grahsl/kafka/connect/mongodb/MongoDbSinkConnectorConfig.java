@@ -18,6 +18,7 @@ package at.grahsl.kafka.connect.mongodb;
 
 import at.grahsl.kafka.connect.mongodb.cdc.CdcHandler;
 import at.grahsl.kafka.connect.mongodb.cdc.debezium.mongodb.MongoDbHandler;
+import at.grahsl.kafka.connect.mongodb.cdc.debezium.rdbms.mssql.MssqlHandler;
 import at.grahsl.kafka.connect.mongodb.cdc.debezium.rdbms.mysql.MysqlHandler;
 import at.grahsl.kafka.connect.mongodb.cdc.debezium.rdbms.postgres.PostgresHandler;
 import at.grahsl.kafka.connect.mongodb.processor.*;
@@ -401,6 +402,7 @@ public class MongoDbSinkConnectorConfig extends AbstractConfig {
         cdcHandlers.add(MongoDbHandler.class.getName());
         cdcHandlers.add(MysqlHandler.class.getName());
         cdcHandlers.add(PostgresHandler.class.getName());
+        cdcHandlers.add(MssqlHandler.class.getName());
         return cdcHandlers;
     }
 
